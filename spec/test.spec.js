@@ -168,6 +168,18 @@ describe("Calculator:-", () => {
 
   //   // Check that the spy was called
   //   expect(spy).toHaveBeenCalled();
-  //   expect(version).toBe(10); 
+  //   expect(version).toBe(10);
   // });
+
+  it(" fetching the version from git hub gist feautre ", async function () {
+    const data = await fetch(
+      "https://gist.githubusercontent.com/Hemanthudupa/90ac03eab3b4a514c808507a6f9c6c00/raw/99be03460d7056f104343818027642f14f78e932/gistfile1.txt"
+    );
+    const mainData = await data.json();
+    console.log(mainData);
+    let obj = { versoion: 0.4 };
+    expect((() => {
+      return mainData;
+    })()).toEqual(obj);
+  });
 });
