@@ -61,7 +61,8 @@
 
 class Calculator {
   add(a, b) {
-    this.update(a + b, this.add.name);
+    console.log(a + b, this.add.name," is the in");
+    return this.update(a + b, this.add.name);
   }
   sub(a, b) {
     this.update(a - b, this.sub.name);
@@ -77,12 +78,12 @@ class Calculator {
   }
 }
 
-exports.opertion=function opertation(a, b, type) {
+exports.opertion = function opertation(a, b, type) {
   const calc = new Calculator();
 
   switch (type) {
     case "add":
-      calc.add(a, b);
+      return calc.add(a, b);
       break;
     case "sub":
       calc.sub(a, b);
@@ -95,9 +96,7 @@ exports.opertion=function opertation(a, b, type) {
     case "div":
       calc.div(a, b);
       break;
-
   }
-}
+};
 
-
-module.exports.Calculator=Calculator
+module.exports.Calculator = Calculator;

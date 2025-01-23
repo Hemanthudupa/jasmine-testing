@@ -97,13 +97,25 @@ describe("Calculator:-", () => {
   //   expect(obj.updateValue).toHaveBeenCalledTimes(2);
   // });
 
-  it("check for protypes methods  add ", () => {
-    const spy = spyOn(Calculator.prototype, "add");
+  // it("check for protypes methods  add ", () => {
+  //   const spy = spyOn(Calculator.prototype, "update");
 
-    opertion(1, 2, "add");
-    expect(spy).toHaveBeenCalled()
-  });
+  //   opertion(1, 2, "add");
+  //   expect(spy).toHaveBeenCalled();
+  //   expect(spy).toHaveBeenCalledWith(3, "add");
+  //   expect(spy).toHaveBeenCalledTimes(1);
+  // });
   // xit("check for protypes methods  sub ", () => {});
   // xit("check for protypes methods  mul ", () => {});
   // xit("check for protypes methods  div ", () => {});
+
+  it("implementing callFake method to spies ", () => {
+    const spy = spyOn(Calculator.prototype, "update").and.callFake((a, b) => {
+      let d = +""+a + b;
+      return d;
+    });
+    // opertion(1, 2, "add");
+
+    expect(opertion(1, 2, "add")).toBe("3add");
+  });
 });
