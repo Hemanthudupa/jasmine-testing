@@ -77,17 +77,27 @@ class Calculator {
   }
 }
 
-function opertation(a, b, type) {
+exports.opertion=function opertation(a, b, type) {
   const calc = new Calculator();
 
   switch (type) {
     case "add":
       calc.add(a, b);
+      break;
     case "sub":
       calc.sub(a, b);
+      break;
+
     case "mul":
       calc.mul(a, b);
+      break;
+
     case "div":
       calc.div(a, b);
+      break;
+
   }
 }
+
+
+module.exports.Calculator=Calculator

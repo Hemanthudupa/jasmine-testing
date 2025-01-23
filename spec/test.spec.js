@@ -1,14 +1,5 @@
 // spec/calculatorSpec.js
-const {
-  // add: calculator,
-  // a,
-  // array,
-  // err,
-  // obj,
-  // checkSpies,
-  // getName,
-  // add,
-} = require("../test");
+const { opertion, Calculator } = require("../test");
 const { customMatcher } = require("./custom-matcher");
 
 describe("Calculator:-", () => {
@@ -83,8 +74,6 @@ describe("Calculator:-", () => {
   //   expect(checkSpies.hesaru).toHaveBeenCalled();
   // });
 
-
-
   // it("check the update method is calling or not ", () => {
   //   spyOn(obj, "updateValue");
 
@@ -109,11 +98,12 @@ describe("Calculator:-", () => {
   // });
 
   it("check for protypes methods  add ", () => {
+    const spy = spyOn(Calculator.prototype, "add");
 
-    const spy=spyOn(Calculator.prototype)
-
+    opertion(1, 2, "add");
+    expect(spy).toHaveBeenCalled()
   });
-  xit("check for protypes methods  sub ", () => {});
-  xit("check for protypes methods  mul ", () => {});
-  xit("check for protypes methods  div ", () => {});
+  // xit("check for protypes methods  sub ", () => {});
+  // xit("check for protypes methods  mul ", () => {});
+  // xit("check for protypes methods  div ", () => {});
 });
