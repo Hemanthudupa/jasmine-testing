@@ -147,10 +147,27 @@ describe("Calculator:-", () => {
 
   // adding property in the jasmine
 
-  it("adding property in jasmine ", () => {
-    Object.defineProperty(Calculator.prototype, "version", {
-      value: "10.0",
-    });
-    console.log(Calculator.prototype.version);
-  });
+  // it("adding property in jasmine ", () => {
+  //   Object.defineProperty(Calculator.prototype, "version", {
+  //     value: "10.0",
+  //   });
+  //   console.log(Calculator.prototype.version);
+  // });
+
+  // it(" spy on version property ", () => {
+  //   const ob = Object.defineProperty(Calculator.prototype, "version", {
+  //     get: () => {
+  //       return 10;
+  //     },
+  //   });
+  //   const calci = new Calculator();
+  //   const spy = spyOnProperty(calci, "version", "get").and.callThrough();
+
+  //   // Access the version property to trigger the getter
+  //   const version = calci.version;
+
+  //   // Check that the spy was called
+  //   expect(spy).toHaveBeenCalled();
+  //   expect(version).toBe(10); 
+  // });
 });

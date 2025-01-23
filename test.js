@@ -74,8 +74,15 @@ class Calculator {
     this.update(a / b, this.div.name);
   }
   update(data, method) {
-
-    console.log(data, " is the updated data", this.update.name, " is the method ");
+    console.log(
+      data,
+      " is the updated data",
+      this.update.name,
+      " is the method "
+    );
+  }
+  get version() {
+    return 10;
   }
 }
 
