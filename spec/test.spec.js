@@ -109,13 +109,24 @@ describe("Calculator:-", () => {
   // xit("check for protypes methods  mul ", () => {});
   // xit("check for protypes methods  div ", () => {});
 
-  it("implementing callFake method to spies ", () => {
-    const spy = spyOn(Calculator.prototype, "update").and.callFake((a, b) => {
-      let d = +""+a + b;
-      return d;
-    });
-    // opertion(1, 2, "add");
+  // it("implementing callFake method to spies ", () => {
+  //   const spy = spyOn(Calculator.prototype, "update").and.callFake((a, b) => {
+  //     let d = +""+a + b;
+  //     return d;
+  //   });
+  //   // opertion(1, 2, "add");
 
-    expect(opertion(1, 2, "add")).toBe("3add");
+  //   expect(opertion(1, 2, "add")).toBe("3add");
+  // });
+
+  it(" implementing the returnValue handy function ", () => {
+    const spy = spyOn(Calculator.prototype, "add").and.returnValue(
+      " updated successfully done "
+    );
+
+    const spy2=spyOn(Calculator.prototype, "update").and.callThrough()
+    opertion(1, 3, "add");
+
+    expect(spy2).toHaveBeenCalledWith(" updated successfully done ")
   });
 });
