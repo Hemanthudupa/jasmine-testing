@@ -119,14 +119,38 @@ describe("Calculator:-", () => {
   //   expect(opertion(1, 2, "add")).toBe("3add");
   // });
 
-  it(" implementing the returnValue handy function ", () => {
-    const spy = spyOn(Calculator.prototype, "add").and.returnValue(
-      " updated successfully done "
-    );
+  // it(" implementing the returnValue handy function ", () => {
+  //   const spy = spyOn(Calculator.prototype, "add").and.returnValue(
+  //     " updated successfully done "
+  //   );
 
-    const spy2=spyOn(Calculator.prototype, "update").and.callThrough()
-    opertion(1, 3, "add");
+  //   const spy2=spyOn(Calculator.prototype, "update").and.callThrough()
+  //   opertion(1, 3, "add");
 
-    expect(spy2).toHaveBeenCalledWith(" updated successfully done ")
+  //   expect(spy2).toHaveBeenCalledWith(" updated successfully done ")
+  // });
+  // it("testing new logics ", () => {
+  //   const spy2 = spyOn(Calculator.prototype, "update").and.callThrough();
+  //   opertion(1, 3, "add");
+
+  //   expect(spy2).toHaveBeenCalledWith(4);
+  // });
+
+  // it(" check the error is handling there or not ", function name() {
+  //   const spy = spyOn(Calculator.prototype, "update").and.throwError(
+  //     "error came"
+  //   );
+  //   expect(() => {
+  //     opertion(1, 3, "add");
+  //   }).toThrow(new Error("error came"));
+  // });
+
+  // adding property in the jasmine
+
+  it("adding property in jasmine ", () => {
+    Object.defineProperty(Calculator.prototype, "version", {
+      value: "10.0",
+    });
+    console.log(Calculator.prototype.version);
   });
 });
